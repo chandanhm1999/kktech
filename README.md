@@ -3,8 +3,6 @@ This is a [Next.js](https://nextjs.org/) project
 ## Getting Started!
 
 First, run the development server:
-like this?
-
 
 ```bash
 npm run dev
