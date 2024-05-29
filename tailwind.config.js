@@ -10,7 +10,9 @@ module.exports = {
   theme: {
     extend: {},
     colors: {
+      primary: "#0070f3",
       background: "#FAF8F3",
+      lightwhite: "#F7F7FF",
       primary: {
         DEFAULT: "#c1deba",
         50: "#f6f9f4",
@@ -93,6 +95,14 @@ module.exports = {
 
     fontFamily: {
       sans: ["Nunito Sans", "ui-sans-serif", "system-ui"],
+    },
+
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: "20px",
+        md: "40px",
+      },
     },
   },
   plugins: [

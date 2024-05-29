@@ -16,7 +16,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 flex w-full flex-wrap bg-black py-2 text-sm sm:flex-nowrap sm:justify-start">
+    <header className="sticky top-0 z-50 flex w-full flex-wrap bg-lightwhite py-2 text-sm sm:flex-nowrap sm:justify-start">
       <nav
         className="mx-auto w-full px-4 sm:flex sm:items-center sm:justify-between"
         aria-label="Global"
@@ -25,7 +25,7 @@ export default function Navbar() {
           <div className="flex items-center">
             <Link href="/" passHref>
               <Image
-                src="/assets/nav/techlogoo.png" // Add the correct path to your logo image
+                src="/assets/nav/techkk.png" // Add the correct path to your logo image
                 alt="Logo"
                 height={100}
                 width={280}
@@ -60,25 +60,25 @@ export default function Navbar() {
           <div className="mt-5 flex flex-col gap-4 tracking-tight sm:mt-0 sm:flex-row sm:items-center sm:pl-5 md:text-sm">
             <div className="flex flex-col items-center gap-3 sm:flex-row">
               <Link href="/" passHref>
-                <span className="rounded py-1.5 px-3 text-sm font-medium text-white hover:bg-body-600">
+                <span className="rounded py-1.5 px-3 text-sm font-medium text-black hover:bg-body-600">
                   Home
                 </span>
               </Link>
 
               <Link href="/products" passHref>
-                <span className="rounded py-1.5 px-3 text-sm font-medium text-white hover:bg-body-600">
+                <span className="rounded py-1.5 px-3 text-sm font-medium text-black hover:bg-body-600">
                   Products
                 </span>
               </Link>
 
               <Link href="/about" passHref>
-                <span className="rounded py-1.5 px-3 text-sm font-medium text-white hover:bg-body-600">
+                <span className="rounded py-1.5 px-3 text-sm font-medium text-black hover:bg-body-600">
                   About
                 </span>
               </Link>
 
               <Link href="/blog" passHref>
-                <span className="rounded py-1.5 px-3 text-sm font-medium text-white hover:bg-body-600">
+                <span className="rounded py-1.5 px-3 text-sm font-medium text-black hover:bg-body-600">
                   Blog
                 </span>
               </Link>

@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bg-gradient-to-r {
+    background-image: url("../../public/assets/sectionOne/aero.jpg");
+}
