@@ -23,7 +23,7 @@ const Footer = () => {
               />
             <br />
             <p className="">
-            Feel free to reach out to us at any time with your defense product inquiries. We're here to help and ensure our solutions meet your highest expectations.
+            Feel free to reach out to us at any time with your defense product inquiries. We are here to help and ensure our solutions meet your highest expectations.
             </p>
             <br />
             <div className="flex items-center gap-3">
