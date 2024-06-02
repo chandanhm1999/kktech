@@ -13,6 +13,7 @@ module.exports = {
       primary: "#0070f3",
       background: "#FAF8F3",
       lightwhite: "#F7F7FF",
+      blue: "#AF0F0F",
       primary: {
         DEFAULT: "#c1deba",
         50: "#f6f9f4",

@@ -5,7 +5,7 @@ import {
   IconMinus,
   IconShoppingCart,
   IconUserCircle,
-  IconUserPlus,
+  IconNotes,
 } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -65,38 +65,35 @@ export default function Navbar() {
                 </span>
               </Link>
 
-              <Link href="/products" passHref>
-                <span className="rounded py-1.5 px-3 text-sm font-medium text-black hover:bg-body-600">
-                  Products
-                </span>
-              </Link>
-
               <Link href="/about" passHref>
                 <span className="rounded py-1.5 px-3 text-sm font-medium text-black hover:bg-body-600">
-                  About
+                About
                 </span>
               </Link>
 
-              <Link href="/blog" passHref>
+              <Link href="/products" passHref>
                 <span className="rounded py-1.5 px-3 text-sm font-medium text-black hover:bg-body-600">
-                  Blog
+                   Products
+                </span>
+              </Link>
+
+              <Link href="/contact" passHref>
+                <span className="rounded py-1.5 px-3 text-sm font-medium text-black hover:bg-body-600">
+                  Contact
                 </span>
               </Link>
             </div>
 
             <div className="flex flex-col items-center gap-3 sm:ml-auto sm:flex-row">
-              <button className="flex items-center gap-x-1.5 rounded border-accent py-1.5 px-3 font-medium text-body-500 hover:bg-body-100 sm:border">
-                <IconUserPlus size={20} stroke={1.5} className="hidden sm:block" />
-                Refer Friends
+              <button className="flex items-center gap-x-1.5 rounded border-accent-300 py-1.5 px-3 font-medium text-body-500 hover:bg-body-100 sm:border sm:border-primary-300 sm:bg-primary sm:font-semibold sm:text-primary-800 sm:hover:bg-primary-300">
+                <IconNotes size={20} stroke={1.5} className="hidden sm:block" />
+                Quote
               </button>
 
-              <button className="flex items-center gap-x-1.5 rounded border-accent-300 py-1.5 px-3 font-medium text-body-500 hover:bg-body-100 sm:border sm:border-primary-300 sm:bg-primary sm:font-semibold sm:text-primary-800 sm:hover:bg-primary-300">
-                <IconUserCircle size={20} stroke={1.5} className="hidden sm:block" />
-                Account
-              </button>
+              
 
               <button className="rounded py-1.5 px-3 text-body-900 hover:bg-body-100">
-                <IconShoppingCart stroke={1.5} size={24} className="hidden sm:block" />
+                <IconUserCircle stroke={1.5} size={24} className="hidden sm:block" />
                 <span className="text-body-500 sm:hidden">Your Cart</span>
               </button>
             </div>
