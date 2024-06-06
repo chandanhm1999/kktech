@@ -1,7 +1,7 @@
 import React from "react";
 import ProductAero from "../../components/ProductAero/ProductAero";
 
-export default function page() {
+export default function Page() {
   
 
   return (
