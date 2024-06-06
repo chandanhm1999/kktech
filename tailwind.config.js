@@ -14,6 +14,9 @@ module.exports = {
       background: "#FAF8F3",
       lightwhite: "#F7F7FF",
       blue: "#AF0F0F",
+      red: "#ff0000",
+      green: "#228B22",
+      lightyellow: "#7CFC00",
       primary: {
         DEFAULT: "#c1deba",
         50: "#f6f9f4",
