@@ -3,7 +3,15 @@ import { Suspense } from 'react';
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 
-const page = () => {
+const Page = () => {
+    // Wrap useSearchParams in Suspense
+    return (
+      <Suspense fallback={<div>Loading...</div>}>
+        <PageContent />
+      </Suspense>
+    );
+  };
+const PageContent = () => {
   const searchParams = useSearchParams();
   const product = searchParams.get('product');
 
