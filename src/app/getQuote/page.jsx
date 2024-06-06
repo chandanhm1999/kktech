@@ -1,9 +1,9 @@
 "use client";
-
+import { Suspense } from 'react';
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 
-const Page = () => {
+const page = () => {
   const searchParams = useSearchParams();
   const product = searchParams.get('product');
 
