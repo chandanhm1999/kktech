@@ -10,7 +10,7 @@ export default function Steps() {
     <section>
       <div className="mx-auto flex flex-col p-6">
         <p className="text-center text-sm text-body-500 sm:text-base">
-          Here's how our process works.
+          Here is how our process works.
         </p>
         <div className="divide-y divide-body-500">
           <div className="mx-auto grid grid-cols-4 justify-center space-y-8 p-8 lg:space-y-0">
