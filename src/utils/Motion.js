@@ -39,6 +39,8 @@ export const staggerContainer = (staggerChildren, delayChildren) => ({
   },
 });
 
+
+
 export const fadeIn = (direction, type, delay, duration) => ({
   hidden: {
     x: direction === "left" ? 100 : direction === "right" ? -100 : 0,
@@ -54,6 +56,26 @@ export const fadeIn = (direction, type, delay, duration) => ({
       delay,
       duration,
       ease: "easeOut",
+    },
+  },
+});
+
+export const textContainer = {
+  hidden: {
+    opacity: 0,
+  },
+  show: (i = 1) => ({
+    opacity: 1,
+    transition: { staggerChildren: 0.1, delayChildren: i * 0.1 },
+  }),
+};
+
+export const aboutStaggerContainer = (staggerChildren, delayChildren) => ({
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren,
+      delayChildren,
     },
   },
 });

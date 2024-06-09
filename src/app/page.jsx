@@ -1,10 +1,10 @@
-
-
 import BannerDetails from "@/components/BannerDetails/BannerDetails";
 import BannerDetailsL from "@/components/BannerDetailsleft/BannerDetailsL";
-import Footer from "@/components/Footer/Footer";
-import Navbar from "@/components/Navbar/Navbar";
 import Hero from "@/components/home/Hero";
+import ConnectD from "@/components/homeSecLast/SecOneD/ConnectD";
+import About from "@/components/homeSecTwo/About";
+import Status from "@/components/homeSecTwo/Status";
+
 
 import dynamic from "next/dynamic";
 
@@ -17,9 +17,12 @@ export default function Home() {
   return (
     <main className="">
       <Hero />
+      <About />
+      <Status />
       <BannerDetails />
       <BannerDetailsL />
       <Collections />
+      <ConnectD />
     </main>
   );
 }

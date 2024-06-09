@@ -1,0 +1,56 @@
+{
+    "heading": "Discover Our Extensive Range of Specialized Products",
+    "description": "Explore our diverse selection of high-quality products tailored to meet the needs of various industries. We are committed to delivering excellence and innovation across all our product lines.",
+    "products": [
+      {
+        "id": 1,
+        "title": "Aerospace and Defense Products",
+        "image": "/assets/homeSecCollections/aeroplpro.png",
+        "alt": "Aerospace and Defense Products",
+        "link": "/products"
+      },
+      {
+        "id": 2,
+        "title": "Satcom and Ground Application Products",
+        "image": "/assets/homeSecCollections/proOne.png",
+        "alt": "Satcom and Ground Application Products",
+        "link": "/products"
+      },
+      {
+        "id": 3,
+        "title": "Trianga Indigenous and Wave Guide Products",
+        "image": "/assets/homeSecCollections/protwo.png",
+        "alt": "Trianga Indigenous and Wave Guide Products",
+        "link": "/products"
+      },
+      {
+        "id": 4,
+        "title": "Hi-Rel Space Qualified Products",
+        "image": "/assets/homeSecCollections/prothree.png",
+        "alt": "Hi-Rel Space Qualified Products",
+        "link": "/products"
+      },
+      {
+        "id": 5,
+        "title": "Test Measurements and Embedded Products",
+        "image": "/assets/homeSecCollections/profour.png",
+        "alt": "Test Measurements and Embedded Products",
+        "link": "/products"
+      },
+      {
+        "id": 6,
+        "title": "Satcom and Ground Application Products",
+        "image": "/assets/homeSecCollections/proOne.png",
+        "alt": "Satcom and Ground Application Products",
+        "link": "/products"
+      },
+      {
+        "id": 7,
+        "title": "Aerospace and Defense Products",
+        "image": "/assets/homeSecCollections/aeroplpro.png",
+        "alt": "Aerospace and Defense Products",
+        "link": "/products"
+      }
+    ]
+  }
+  

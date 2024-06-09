@@ -4,8 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../utils/Motion";
+import collectionsData from "./data/collectionsData.json"; // Import the JSON data
 
 export default function Collections() {
+  const { heading, description, products } = collectionsData;
+
   return (
     <div className="min-h-screen py-10 sm:py-8 lg:py-0">
       <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
@@ -18,8 +21,7 @@ export default function Collections() {
               whileInView="show"
               viewport={{ once: false, amount: 0.25 }}
             >
-              Discover Our Extensive Range &apos;of{" "}
-              <span>Specialized Products</span>
+              {heading}
             </motion.h2>
 
             <motion.p
@@ -29,8 +31,7 @@ export default function Collections() {
               whileInView="show"
               viewport={{ once: false, amount: 0.25 }}
             >
-              {" "}
-              Explore our diverse selection of high-quality products tailored to meet the needs of various industries. We are committed to delivering excellence and innovation across all our product lines.
+              {description}
             </motion.p>
           </div>
         </div>
@@ -43,95 +44,26 @@ export default function Collections() {
             whileInView="show"
             viewport={{ once: false, amount: 0.25 }}
           >
-            <Link
-              href="/products"
-              className="group relative flex h-48 items-end overflow-hidden rounded shadow-lg md:col-span-2 md:h-80"
-            >
-              <Image
-                src="/assets/homeSecCollections/aeroplpro.png"
-                height={300}
-                width={400}
-                alt="Aerospace and Défense Products"
-                className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110 "
-              />
+            {products.map((product, index) => (
+              <Link
+                key={product.id}
+                href={product.link}
+                className={`group relative flex h-48 items-end overflow-hidden rounded shadow-lg ${index === 0 ? 'md:col-span-2 md:h-80' : 'md:h-80'}`}
+              >
+                <Image
+                  src={product.image}
+                  height={300}
+                  width={400}
+                  alt={product.alt}
+                  className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
+                />
 
-              <div className="via-transparent to-transparent pointer-events-none absolute inset-0 bg-gradient-to-t from-black opacity-50"></div>
-              <p className="relative ml-4 mb-3 inline-block text-sm font-medium text-white md:ml-5 md:text-lg">
-              Aerospace and Defense Products
-              </p>
-            </Link>
-            <Link
-              href="/products"
-              className="group relative flex h-48 items-end overflow-hidden rounded shadow-lg md:h-80"
-            >
-              <Image
-                src="/assets/homeSecCollections/proOne.png"
-                height={1024}
-                width={1024}
-                alt="Satcom and Ground Application Products"
-                className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
-              />
-
-              <div className="via-transparent to-transparent pointer-events-none absolute inset-0 bg-gradient-to-t from-black opacity-50"></div>
-
-              <p className="relative ml-4 mb-3 inline-block text-sm font-medium text-white md:ml-5 md:text-lg">
-              Satcom and Ground Application Products
-              </p>
-            </Link>
-
-            <Link
-              href="/products"
-              className="group relative flex h-48 items-end justify-end overflow-hidden rounded px-4 shadow-lg md:h-80"
-            >
-              <Image
-                src="/assets/homeSecCollections/protwo.png"
-                height={1024}
-                width={1024}
-                alt="Trianga Indigenous and Wave Guide Products"
-                className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
-              />
-
-              <div className="via-transparent to-transparent pointer-events-none absolute inset-0 bg-gradient-to-t from-black opacity-50"></div>
-
-              <p className="relative ml-4 mb-3 inline-block text-sm font-medium text-white md:ml-5 md:text-lg">
-              Trianga Indigenous and Wave Guide Products
-              </p>
-            </Link>
-            <Link
-              href="/products"
-              className="group relative flex h-48 items-end overflow-hidden rounded shadow-lg md:h-80"
-            >
-              <Image
-                src="/assets/homeSecCollections/prothree.png"
-                height={1024}
-                width={1024}
-                alt="Hi-Rel Space Qualified Products"
-                className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
-              />
-
-              <div className="via-transparent to-transparent pointer-events-none absolute inset-0 bg-gradient-to-t from-black opacity-50"></div>
-
-              <p className="relative ml-4 mb-3 inline-block text-sm font-medium text-white md:ml-5 md:text-lg">
-              Hi-Rel Space Qualified Products
-              </p>
-            </Link>
-            <Link
-              href="/products"
-              className="group relative flex h-48 items-end overflow-hidden rounded shadow-lg md:h-80"
-            >
-              <Image
-                src="/assets/homeSecCollections/profour.png"
-                height={1024}
-                width={1024}
-                alt="Test Measurements and Embedded Products"
-                className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
-              />
-
-              <div className="via-transparent to-transparent pointer-events-none absolute inset-0 bg-gradient-to-t from-black opacity-50"></div>
-              <p className="relative ml-4 mb-3 inline-block text-sm font-medium text-white md:ml-5 md:text-lg">
-              Test Measurements and Embedded Products
-              </p>
-            </Link>
+                <div className="via-transparent to-transparent pointer-events-none absolute inset-0 bg-gradient-to-t from-black opacity-50"></div>
+                <p className="relative ml-4 mb-3 inline-block text-sm font-medium text-white md:ml-5 md:text-lg">
+                  {product.title}
+                </p>
+              </Link>
+            ))}
           </motion.div>
         </div>
       </div>
