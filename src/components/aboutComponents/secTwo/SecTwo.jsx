@@ -87,7 +87,7 @@ const SecTwo = () => {
                 Our mission at KK Tech is to provide innovative and reliable
                 technology solutions that help businesses grow and succeed. We
                 aim to deliver high-quality products and services that meet our
-                customers' needs and exceed their expectations.
+                customers needs and exceed their expectations.
               </p>
             </div>
             <div className="bg-newblack p-5 text-white rounded-md">
