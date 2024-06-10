@@ -78,7 +78,7 @@ const ProductAero = () => {
 
   return (
     <main>
-      <section className="container bg-primary-100 py-8">
+      <section className="container py-8">
         <h1 className="mb-8 border-l-8 py-2 pl-2 text-center text-3xl font-bold">
           Our Latest Products
         </h1>

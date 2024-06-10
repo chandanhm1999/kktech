@@ -6,6 +6,8 @@ import SecTwo from '@/components/aboutComponents/secTwo/SecTwo';
 import Vision from '@/components/aboutComponents/secTwo/Vision';
 import Steps from '@/components/aboutComponents/steps/Steps';
 import AboutDemo from '../../components/aboutComponents/aboutdemo/AboutDemo';
+import ConnectD from "@/components/homeSecLast/SecOneD/ConnectD";
+
 
 const page = () => {
   return (
@@ -17,6 +19,7 @@ const page = () => {
       <SecTwo />
       <AboutDemo />
       <Steps />
+      <ConnectD />
     </div>
   )
 }
