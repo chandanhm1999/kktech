@@ -13,29 +13,25 @@ const Page = () => {
   };
 const PageContent = () => {
   const searchParams = useSearchParams();
-  const product = searchParams.get('product');
+  const cart = searchParams.get('cart');
 
-  const [productDetails, setProductDetails] = useState({
-    title: "",
-    subtitle: "",
-    description: "",
-  });
-
+  const [products, setProducts] = useState([]);
   const [formData, setFormData] = useState({
     name: "",
     company: "",
     phone: "",
-    email: ""
+    email: "",
+    message: ""
   });
 
   useEffect(() => {
-    if (product) {
-      const parsedProduct = JSON.parse(decodeURIComponent(product));
-      setProductDetails(parsedProduct);
+    if (cart) {
+      const parsedCart = JSON.parse(decodeURIComponent(cart));
+      setProducts(parsedCart);
     }
-  }, [product]);
+  }, [cart]);
 
-  const handleChange = (e) => {
+  const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
@@ -45,18 +41,18 @@ const PageContent = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Combine product details and form data
-    const dataToSend = {
-      ...productDetails,
-      ...formData
+    const data = {
+      ...formData,
+      products,
     };
+
     // Send email using your preferred method
     const res = await fetch('/api/sendEmail', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(dataToSend),
+      body: JSON.stringify(data),
     });
 
     if (res.ok) {
@@ -71,40 +67,13 @@ const PageContent = () => {
       <h1 className="text-3xl font-bold mb-4">Get a Quote</h1>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
-          <label className="block text-gray-700">Product Title</label>
-          <input
-            type="text"
-            value={productDetails.title}
-            readOnly
-            className="w-full px-3 py-2 border rounded"
-          />
-        </div>
-        <div className="mb-4">
-          <label className="block text-gray-700">Subtitle</label>
-          <input
-            type="text"
-            value={productDetails.subtitle}
-            readOnly
-            className="w-full px-3 py-2 border rounded"
-          />
-        </div>
-        <div className="mb-4">
-          <label className="block text-gray-700">Description</label>
-          <textarea
-            value={productDetails.description}
-            readOnly
-            className="w-full px-3 py-2 border rounded"
-          ></textarea>
-        </div>
-        <div className="mb-4">
           <label className="block text-gray-700">Name</label>
           <input
             type="text"
             name="name"
             value={formData.name}
-            onChange={handleChange}
+            onChange={handleInputChange}
             className="w-full px-3 py-2 border rounded"
-            required
           />
         </div>
         <div className="mb-4">
@@ -113,20 +82,18 @@ const PageContent = () => {
             type="text"
             name="company"
             value={formData.company}
-            onChange={handleChange}
+            onChange={handleInputChange}
             className="w-full px-3 py-2 border rounded"
-            required
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700">Phone Number</label>
+          <label className="block text-gray-700">Phone</label>
           <input
             type="text"
             name="phone"
             value={formData.phone}
-            onChange={handleChange}
+            onChange={handleInputChange}
             className="w-full px-3 py-2 border rounded"
-            required
           />
         </div>
         <div className="mb-4">
@@ -135,11 +102,28 @@ const PageContent = () => {
             type="email"
             name="email"
             value={formData.email}
-            onChange={handleChange}
+            onChange={handleInputChange}
             className="w-full px-3 py-2 border rounded"
-            required
           />
         </div>
+        <div className="mb-4">
+          <label className="block text-gray-700">Message</label>
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleInputChange}
+            className="w-full px-3 py-2 border rounded"
+          ></textarea>
+        </div>
+
+        {products.map((product, index) => (
+          <div key={index} className="mb-4">
+            <h2 className="font-bold">{product.title}</h2>
+            <p>{product.subtitle}</p>
+            <p>{product.description}</p>
+          </div>
+        ))}
+
         <button
           type="submit"
           className="bg-green text-white px-4 py-2 rounded hover:bg-blue-700"

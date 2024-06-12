@@ -60,42 +60,42 @@ export default function Navbar() {
           <div className="mt-5 flex flex-col gap-4 tracking-tight sm:mt-0 sm:flex-row sm:items-center sm:pl-5 md:text-sm">
             <div className="flex flex-col items-center gap-3 sm:flex-row">
               <Link href="/" passHref>
-                <span className="rounded py-1.5 px-3 text-sm font-medium text-black hover:bg-body-600">
+                <span className="rounded py-1.5 px-3 text-sm font-medium text-black hover:bg-body-600 hover:text-white">
                   Home
                 </span>
               </Link>
 
               <Link href="/about" passHref>
-                <span className="rounded py-1.5 px-3 text-sm font-medium text-black hover:bg-body-600">
+                <span className="rounded py-1.5 px-3 text-sm font-medium text-black hover:bg-body-600 hover:text-white">
                 About
                 </span>
               </Link>
 
               <Link href="/products" passHref>
-                <span className="rounded py-1.5 px-3 text-sm font-medium text-black hover:bg-body-600">
+                <span className="rounded py-1.5 px-3 text-sm font-medium text-black hover:bg-body-600 hover:text-white">
                    Products
                 </span>
               </Link>
 
               <Link href="/contact" passHref>
-                <span className="rounded py-1.5 px-3 text-sm font-medium text-black hover:bg-body-600">
+                <span className="rounded py-1.5 px-3 text-sm font-medium text-black hover:bg-body-600 hover:text-white">
                   Contact
                 </span>
               </Link>
             </div>
 
             <div className="flex flex-col items-center gap-3 sm:ml-auto sm:flex-row">
-              <button className="flex items-center gap-x-1.5 rounded border-accent-300 py-1.5 px-3 font-medium text-body-500 hover:bg-body-100 sm:border sm:border-primary-300 sm:bg-primary sm:font-semibold sm:text-primary-800 sm:hover:bg-primary-300">
+              <Link href="/getQuote" passHref className="flex items-center gap-x-1.5 rounded border-accent-300 py-1.5 px-3 font-medium text-body-500 hover:bg-body-100 sm:border sm:border-primary-300 sm:bg-primary sm:font-semibold sm:text-primary-800 sm:hover:bg-primary-300">
                 <IconNotes size={20} stroke={1.5} className="hidden sm:block" />
                 Quote
-              </button>
+              </Link>
 
               
 
-              <button className="rounded py-1.5 px-3 text-body-900 hover:bg-body-100">
-                <IconUserCircle stroke={1.5} size={24} className="hidden sm:block" />
+              <Link href="/cart" passHref className="rounded py-1.5 px-3 text-body-900 hover:bg-body-100">
+                <IconShoppingCart stroke={1.5} size={24} className="hidden sm:block" />
                 <span className="text-body-500 sm:hidden">Your Cart</span>
-              </button>
+              </Link>
             </div>
           </div>
         </div>

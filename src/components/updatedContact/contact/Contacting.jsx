@@ -38,7 +38,7 @@ const Contacting = () => {
     <section className="bg-dark_primary text-white" id="contact">
       <Toaster />
 
-      <div className="px-5 py-14 flex flex-col md:flex-row items-center justify-center">
+      <div className="px-5 pt-14 flex flex-col md:flex-row items-center justify-center">
         
         <div className="md:w-1/2 md:order-2">
           <img src="/assets/Contact/cont.png" alt="Contact Image" className="w-full h-auto" />
@@ -84,7 +84,7 @@ const Contacting = () => {
               className="border border-slate-600 p-3 rounded h-44"
               required
             ></textarea>
-            <button className="btn self-start bg-black text-gray-800 hover:bg-blue hover:text-white transform transition-transform duration-300 hover:scale-105 py-3 px-6 shadow-md">
+            <button className="btn self-start bg-black text-white hover:bg-blue hover:text-white transform transition-transform duration-300 hover:scale-105 py-3 px-6 shadow-md">
               Submit
             </button>
           </form>

@@ -4,13 +4,13 @@ import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Image from "next/image";
-import { useRouter } from "next/navigation";  // Correct import for navigatio
+import { useRouter } from "next/navigation";  // Correct import for navigation
 
 // Example JSON data; replace with actual data fetching in a real application
 const productData = [
   {
     imageSrc: "/assets/homeSecCollections/punya pics/22.jpg",
-    title: "Aerospace and Defense Products",
+    title: "Defense Products",
     subtitle: "RF Components",
     description:
       "Enhance your operations with our top-tier aerospace and defense solutions, designed for precision and reliability in the most demanding environments.",
@@ -31,21 +31,35 @@ const productData = [
   },
   {
     imageSrc: "/assets/homeSecCollections/punya pics/14.jpg",
-    title: "Hi-Rel Space Qualified Products",
+    title: "Hi-Rel Space Products",
     subtitle: "Cable Assemblies",
     description:
       "Trust our high-reliability space-qualified products for your critical space missions, ensuring unmatched quality and dependability.",
   },
   {
     imageSrc: "/assets/homeSecCollections/punya pics/12.jpg",
-    title: "Raw Materials, Fasteners, and Ceramic Products",
+    title: "Test & Measurements Products",
     subtitle: "RF Components",
     description:
       "Source the finest raw materials, fasteners, and ceramic products from us, offering exceptional quality to meet your manufacturing and production needs.",
   },
   {
     imageSrc: "/assets/homeSecCollections/proOne.png",
-    title: "AMC for SATCOM Antenna & RF Components",
+    title: "AMC for satcom services",
+    subtitle: "RF Components",
+    description:
+      "Ensure the longevity and performance of your SATCOM antennas and RF components with our expert AMC services, providing maintenance and support you can rely on.",
+  },
+  {
+    imageSrc: "/assets/homeSecCollections/proOne.png",
+    title: "Specialized Raw Materials & Ceramics Products",
+    subtitle: "RF Components",
+    description:
+      "Ensure the longevity and performance of your SATCOM antennas and RF components with our expert AMC services, providing maintenance and support you can rely on.",
+  },
+  {
+    imageSrc: "/assets/homeSecCollections/proOne.png",
+    title: "Medical & Scientfic components",
     subtitle: "RF Components",
     description:
       "Ensure the longevity and performance of your SATCOM antennas and RF components with our expert AMC services, providing maintenance and support you can rely on.",
@@ -55,11 +69,15 @@ const productData = [
 const ProductAero = () => {
   const [products, setProducts] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [cart, setCart] = useState([]);
   const router = useRouter();
 
   useEffect(() => {
     AOS.init();
     setProducts(productData);
+    // Load cart from localStorage on mount
+    const savedCart = JSON.parse(localStorage.getItem('cart')) || [];
+    setCart(savedCart);
   }, []);
 
   const openModal = (product) => {
@@ -70,10 +88,16 @@ const ProductAero = () => {
     setSelectedProduct(null);
   };
 
-  const handleGetQuote = () => {
+  const addToCart = (product) => {
+    const newCart = [...cart, product];
+    setCart(newCart);
+    localStorage.setItem('cart', JSON.stringify(newCart));
+    console.log("Added to cart:", product); // Debug log
     closeModal();
-    const productString = encodeURIComponent(JSON.stringify(selectedProduct));
-    router.push(`/getQuote?product=${productString}`);
+  };
+
+  const handleViewCart = () => {
+    router.push(`/cart`);
   };
 
   return (
@@ -135,12 +159,23 @@ const ProductAero = () => {
             />
             <p>{selectedProduct.description}</p>
             <button
-              onClick={handleGetQuote}
+              onClick={() => addToCart(selectedProduct)}
               className="mt-4 rounded bg-green px-4 py-2 text-white hover:bg-lightyellow"
             >
-              Get Quote
+              Add to Cart
             </button>
           </div>
+        </div>
+      )}
+
+      {cart.length > 0 && (
+        <div className="fixed bottom-4 right-4">
+          <button
+            onClick={handleViewCart}
+            className="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-800"
+          >
+            View Cart ({cart.length})
+          </button>
         </div>
       )}
     </main>

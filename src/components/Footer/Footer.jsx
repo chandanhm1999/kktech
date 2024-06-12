@@ -7,6 +7,7 @@ import {
   FaMobileAlt,
 } from "react-icons/fa";
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -14,25 +15,22 @@ const Footer = () => {
       <section className="mx-auto max-w-[1200px] text-white">
         <div className=" grid py-5 md:grid-cols-3">
           <div className=" px-4 py-8 ">
-            
             <Image
-                src="/assets/nav/techkk.png" // Add the correct path to your logo image
-                alt="Logo"
-                height={100}
-                width={280}
-              />
+              src="/assets/nav/techkk.png" // Add the correct path to your logo image
+              alt="Logo"
+              height={100}
+              width={280}
+            />
             <br />
             <p className="">
-            Feel free to reach out to us at any time with your defense product inquiries. We are here to help and ensure our solutions meet your highest expectations.
+              R No 01 KNO 71/95/2/1, Rajanakunte, Yalahanka, Vajram Tiara Foot
+              Boll Ground, Doddaballapura main Road, Avalahalli, Bengaluru,
+              Bengaluru Urban, Karnataka, 560064
             </p>
             <br />
-            <div className="flex items-center gap-3">
-              <FaLocationArrow />
-              <p>Karnataka, India</p>
-            </div>
             <div className="mt-3 flex items-center gap-3">
               <FaMobileAlt />
-              <p>+91 123456789</p>
+              <p>+91 8197722432</p>
             </div>
             {/* Social Handle */}
           </div>
@@ -44,16 +42,24 @@ const Footer = () => {
                 </h1>
                 <ul className={`flex flex-col gap-3`}>
                   <li className="cursor-pointer transition-all duration-300 hover:translate-x-[2px]">
-                    Home
+                    <Link href="/" passHref>
+                      Home
+                    </Link>
                   </li>
                   <li className="cursor-pointer transition-all duration-300 hover:translate-x-[2px]">
-                    About
+                  <Link href="/about" passHref>
+                      About
+                    </Link>
                   </li>
                   <li className="cursor-pointer transition-all duration-300 hover:translate-x-[2px]">
-                    Services
+                  <Link href="/products" passHref>
+                      Products
+                    </Link>
                   </li>
                   <li className="cursor-pointer transition-all duration-300 hover:translate-x-[2px]">
-                    Login
+                  <Link href="/contact" passHref>
+                      Contact
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -71,7 +77,9 @@ const Footer = () => {
                     Services
                   </li>
                   <li className="cursor-pointer transition-all duration-300 hover:translate-x-[2px]">
-                    About us
+                  <Link href="/getQuote" passHref>
+                      Quote
+                    </Link>
                   </li>
                 </ul>
               </div>

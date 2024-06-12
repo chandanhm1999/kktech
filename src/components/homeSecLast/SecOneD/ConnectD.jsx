@@ -1,4 +1,4 @@
-import { FaLinkedin } from 'react-icons/fa';
+import { FaEnvelope } from 'react-icons/fa';
 
 const ConnectD = () => (
   <div
@@ -13,13 +13,13 @@ const ConnectD = () => (
       className="flex items-center h-fit p-3 bg-white rounded-xl hover:bg-black hover:text-white"
     >
       <a
-        href="https://www.linkedin.com/company/mtm-s-e"
+        href="mailto:saleskktechnology@gmail.com"
         rel="noreferrer"
         target="_blank"
         className="flex items-center gap-2"
       >
-        <FaLinkedin className="text-xl" />
-        Connect on LinkedIn
+        <FaEnvelope className="text-xl" />
+        Connect on Email
       </a>
     </button>
   </div>
