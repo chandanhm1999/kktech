@@ -14,7 +14,7 @@ export const stats = [
   },
   {
     id: 'stat3',
-    title: 'Cup of Coffee',
+    title: 'Clients ',
     value: '1k+',
   },
 ];

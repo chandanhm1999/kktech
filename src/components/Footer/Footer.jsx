@@ -8,6 +8,7 @@ import {
 } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
+import { MdEmail } from "react-icons/md";
 
 const Footer = () => {
   return (
@@ -98,13 +99,7 @@ const Footer = () => {
                   />
                   <div className="mt-6 flex items-center gap-3">
                     <a href="#" className="duration-200 hover:scale-105">
-                      <FaInstagram className="text-3xl" />
-                    </a>
-                    <a href="#" className="duration-200 hover:scale-105">
-                      <FaFacebook className="text-3xl" />
-                    </a>
-                    <a href="#" className="duration-200 hover:scale-105">
-                      <FaLinkedin className="text-3xl" />
+                      <MdEmail className="text-3xl" />
                     </a>
                   </div>
                 </div>

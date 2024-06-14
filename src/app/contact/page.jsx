@@ -7,7 +7,7 @@ const page = () => {
   return (
     <div>
       <Contacting />
-      <Map />
+      {/* <Map /> */}
       <ConnectD />
     </div>
   )

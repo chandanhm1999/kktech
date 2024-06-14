@@ -9,56 +9,56 @@ import { useRouter } from "next/navigation";  // Correct import for navigation
 // Example JSON data; replace with actual data fetching in a real application
 const productData = [
   {
-    imageSrc: "/assets/homeSecCollections/punya pics/22.jpg",
+    imageSrc: "/assets/homeCollections/Onee.png",
     title: "Defense Products",
     subtitle: "RF Components",
     description:
       "Enhance your operations with our top-tier aerospace and defense solutions, designed for precision and reliability in the most demanding environments.",
   },
   {
-    imageSrc: "/assets/homeSecCollections/punya pics/19.jpg",
+    imageSrc: "/assets/homeCollections/twoo.png",
     title: "Satcom and Ground Application Products",
     subtitle: "RF Components",
     description:
       "Stay connected with our advanced satellite communication and ground application products, engineered for optimal performance and durability.",
   },
   {
-    imageSrc: "/assets/homeSecCollections/punya pics/17.jpg",
+    imageSrc: "/assets/homeCollections/three.png",
     title: "KK Indigenous and Wave Guide Products",
     subtitle: "PCB Assemblies",
     description:
       "Experience the cutting-edge technology of our Trianga indigenous and wave guide products, crafted to deliver superior performance and efficiency.",
   },
   {
-    imageSrc: "/assets/homeSecCollections/punya pics/14.jpg",
+    imageSrc: "/assets/homeCollections/four.png",
     title: "Hi-Rel Space Products",
     subtitle: "Cable Assemblies",
     description:
       "Trust our high-reliability space-qualified products for your critical space missions, ensuring unmatched quality and dependability.",
   },
   {
-    imageSrc: "/assets/homeSecCollections/punya pics/12.jpg",
+    imageSrc: "/assets/homeCollections/seveen.png",
     title: "Test & Measurements Products",
     subtitle: "RF Components",
     description:
       "Source the finest raw materials, fasteners, and ceramic products from us, offering exceptional quality to meet your manufacturing and production needs.",
   },
   {
-    imageSrc: "/assets/homeSecCollections/proOne.png",
+    imageSrc: "/assets/homeCollections/six.png",
     title: "AMC for satcom services",
     subtitle: "RF Components",
     description:
       "Ensure the longevity and performance of your SATCOM antennas and RF components with our expert AMC services, providing maintenance and support you can rely on.",
   },
   {
-    imageSrc: "/assets/homeSecCollections/proOne.png",
+    imageSrc: "/assets/homeCollections/five.png",
     title: "Specialized Raw Materials & Ceramics Products",
     subtitle: "RF Components",
     description:
       "Ensure the longevity and performance of your SATCOM antennas and RF components with our expert AMC services, providing maintenance and support you can rely on.",
   },
   {
-    imageSrc: "/assets/homeSecCollections/proOne.png",
+    imageSrc: "/assets/homeCollections/eight.png",
     title: "Medical & Scientfic components",
     subtitle: "RF Components",
     description:
@@ -104,7 +104,7 @@ const ProductAero = () => {
     <main>
       <section className="container py-8">
         <h1 className="mb-8 border-l-8 py-2 pl-2 text-center text-3xl font-bold">
-          Our Latest Products
+          Our Products
         </h1>
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3">
           {products.map((product, index) => (

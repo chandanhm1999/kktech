@@ -4,16 +4,19 @@ import {
   IconMenu2,
   IconMinus,
   IconShoppingCart,
-  IconUserCircle,
   IconNotes,
 } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [cartOpen, setCartOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (route) => pathname === route ? 'bg-body-600 text-white' : 'text-black';
 
   return (
     <header className="sticky top-0 z-50 flex w-full flex-wrap bg-lightwhite py-2 text-sm sm:flex-nowrap sm:justify-start">
@@ -60,25 +63,25 @@ export default function Navbar() {
           <div className="mt-5 flex flex-col gap-4 tracking-tight sm:mt-0 sm:flex-row sm:items-center sm:pl-5 md:text-sm">
             <div className="flex flex-col items-center gap-3 sm:flex-row">
               <Link href="/" passHref>
-                <span className="rounded py-1.5 px-3 text-sm font-medium text-black hover:bg-body-600 hover:text-white">
+                <span className={`rounded py-1.5 px-3 text-sm font-medium hover:bg-body-600 hover:text-white ${isActive('/')}`}>
                   Home
                 </span>
               </Link>
 
               <Link href="/about" passHref>
-                <span className="rounded py-1.5 px-3 text-sm font-medium text-black hover:bg-body-600 hover:text-white">
-                About
+                <span className={`rounded py-1.5 px-3 text-sm font-medium hover:bg-body-600 hover:text-white ${isActive('/about')}`}>
+                  About
                 </span>
               </Link>
 
               <Link href="/products" passHref>
-                <span className="rounded py-1.5 px-3 text-sm font-medium text-black hover:bg-body-600 hover:text-white">
-                   Products
+                <span className={`rounded py-1.5 px-3 text-sm font-medium hover:bg-body-600 hover:text-white ${isActive('/products')}`}>
+                  Products
                 </span>
               </Link>
 
               <Link href="/contact" passHref>
-                <span className="rounded py-1.5 px-3 text-sm font-medium text-black hover:bg-body-600 hover:text-white">
+                <span className={`rounded py-1.5 px-3 text-sm font-medium hover:bg-body-600 hover:text-white ${isActive('/contact')}`}>
                   Contact
                 </span>
               </Link>
@@ -89,8 +92,6 @@ export default function Navbar() {
                 <IconNotes size={20} stroke={1.5} className="hidden sm:block" />
                 Quote
               </Link>
-
-              
 
               <Link href="/cart" passHref className="rounded py-1.5 px-3 text-body-900 hover:bg-body-100">
                 <IconShoppingCart stroke={1.5} size={24} className="hidden sm:block" />

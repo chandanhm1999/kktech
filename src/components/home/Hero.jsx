@@ -15,10 +15,10 @@ const Hero = () => {
             className="flex flex-col items-center gap-4 text-center text-white md:items-start md:text-left "
           >
             <h1 className=" text-4xl ">
-              Welocome to the KK Technologies
+              KK Technologies
             </h1>
             <p className="">
-            KK Technology is a specialized electronics distributor offering a comprehensive range of electronic and electrical components. We provide high-quality products and services to leading aerospace, military, and commercial manufacturers, as well as OEMs worldwide. Our team will assist you in designing, implementing, and managing the development of customized solutions to meet your evolving needs.
+            We specialize in the distribution of a comprehensive range of electronic and electrical components. Our commitment to excellence ensures that we deliver high-quality products and services to leading aerospace, military, and commercial manufacturers, as well as OEMs around the globe.
             </p>
             <div className="space-x-4">
               <button className=" border-primary bg-black px-4 py-2 text-sm text-white transition-colors duration-300 hover:bg-primary/80">

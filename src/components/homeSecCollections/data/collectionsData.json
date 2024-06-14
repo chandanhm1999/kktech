@@ -1,60 +1,60 @@
 {
-    "heading": "Discover Our Extensive Range of Specialized Products",
+    "heading": "Discover Our Extensive Range of Products",
     "description": "Explore our diverse selection of high-quality products tailored to meet the needs of various industries. We are committed to delivering excellence and innovation across all our product lines.",
     "products": [
       {
         "id": 1,
         "title": "Defense Products",
-        "image": "/assets/homeSecCollections/aeroplpro.png",
+        "image": "/assets/homeCollections/one.png",
         "alt": "Aerospace and Defense Products",
         "link": "/products"
       },
       {
         "id": 2,
         "title": "Satcom and Ground Application Products",
-        "image": "/assets/homeSecCollections/proOne.png",
+        "image": "/assets/homeCollections/two.png",
         "alt": "Satcom and Ground Application Products",
         "link": "/products"
       },
       {
         "id": 3,
         "title": "KK Indigenous and Wave Guide Products",
-        "image": "/assets/homeSecCollections/protwo.png",
+        "image": "/assets/homeCollections/three.png",
         "alt": "Trianga Indigenous and Wave Guide Products",
         "link": "/products"
       },
       {
         "id": 4,
         "title": "Hi-Rel Space Products",
-        "image": "/assets/homeSecCollections/prothree.png",
+        "image": "/assets/homeCollections/four.png",
         "alt": "Hi-Rel Space Qualified Products",
         "link": "/products"
       },
       {
         "id": 5,
         "title": "Test & Measurements Products",
-        "image": "/assets/homeSecCollections/profour.png",
+        "image": "/assets/homeCollections/seveen.png",
         "alt": "Test Measurements and Embedded Products",
         "link": "/products"
       },
       {
         "id": 6,
         "title": "AMC for satcom services",
-        "image": "/assets/homeSecCollections/proOne.png",
+        "image": "/assets/homeCollections/six.png",
         "alt": "Satcom and Ground Application Products",
         "link": "/products"
       },
       {
         "id": 7,
         "title": "Specialized Raw Materials & Ceramics Products",
-        "image": "/assets/homeSecCollections/aeroplpro.png",
+        "image": "/assets/homeCollections/five.png",
         "alt": "Aerospace and Defense Products",
         "link": "/products"
       },
       {
         "id": 7,
         "title": "Medical & Scientfic components",
-        "image": "/assets/homeSecCollections/aeroplpro.png",
+        "image": "/assets/homeCollections/eight.png",
         "alt": "Aerospace and Defense Products",
         "link": "/products"
       }

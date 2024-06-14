@@ -15,7 +15,7 @@ export default function Collections() {
         <div className="mb-4 flex items-center justify-center gap-8 text-center sm:mb-8 sm:justify-between sm:text-left md:mb-12">
           <div className="flex-col items-center gap-12 pt-5">
             <motion.h2
-              className="flex flex-col text-3xl tracking-tight text-blue sm:text-4xl md:text-5xl"
+              className="flex flex-col text-2xl tracking-tight text-blue sm:text-2xl md:text-2xl"
               variants={fadeIn("up", "tween", 0.1, 0.5)}
               initial="hidden"
               whileInView="show"
@@ -25,7 +25,7 @@ export default function Collections() {
             </motion.h2>
 
             <motion.p
-              className="mt-4 max-w-4xl text-base text-body-500 sm:text-lg"
+              className="mt-4 max-w-4xl text-sm text-body-500 sm:text-lg"
               variants={fadeIn("up", "tween", 0.2, 0.5)}
               initial="hidden"
               whileInView="show"

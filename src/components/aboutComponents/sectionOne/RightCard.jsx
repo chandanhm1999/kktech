@@ -17,10 +17,10 @@ const RightCard = () => {
         We offer cost-effective solutions from unique components to OEM parts through a vast supplier network. Committed to innovation, we invest in R&D to lead in technology. Our customer-focused approach aims to exceed expectations and build lasting partnerships.
         </p>
         <Link
-          href="/about"
+          href="/contact"
           className="flex items-center text-black text-xl font-bold py-3"
         >
-          <span>Learn More</span>
+          <span>Contact</span>
           <MdOutlineDoubleArrow className="ml-1 mt-1 text-4lg font-bold text-blue" />
         </Link>
       </div>

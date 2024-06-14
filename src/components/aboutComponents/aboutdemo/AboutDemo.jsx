@@ -28,7 +28,7 @@ function AboutDemo() {
             experts is committed to delivering innovative technology solutions.
           </p>
 
-          <button className=" border-primary bg-black  text-white transition-colors duration-300 hover:bg-primary/80
+          {/* <button className=" border-primary bg-black  text-white transition-colors duration-300 hover:bg-primary/80
           mt-8 w-full block border border-transparent rounded-md py-3 px-8 text-base font-medium text-gray-900 hover:bg-gray-100 sm:w-auto">
             <a
               href="/products"
@@ -36,7 +36,7 @@ function AboutDemo() {
             >
               Our Products
             </a>
-          </button>
+          </button> */}
         </div>
       </div>
     </section>
