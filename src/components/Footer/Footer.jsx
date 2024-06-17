@@ -77,11 +77,7 @@ const Footer = () => {
                   <li className="cursor-pointer transition-all duration-300 hover:translate-x-[2px]">
                     Services
                   </li>
-                  <li className="cursor-pointer transition-all duration-300 hover:translate-x-[2px]">
-                  <Link href="/getQuote" passHref>
-                      Quote
-                    </Link>
-                  </li>
+                  
                 </ul>
               </div>
             </div>
@@ -97,9 +93,9 @@ const Footer = () => {
                     type="text"
                     placeholder="Email"
                   />
-                  <div className="mt-6 flex items-center gap-3">
+                  <div className=" flex items-center">
                     <a href="#" className="duration-200 hover:scale-105">
-                      <MdEmail className="text-3xl" />
+                      info@KKtechnology.in
                     </a>
                   </div>
                 </div>

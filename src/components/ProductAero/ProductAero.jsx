@@ -1,104 +1,95 @@
-"use client";
+"use client"
+
+// pages/ProductAero.js
 
 import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Image from "next/image";
-import { useRouter } from "next/navigation";  // Correct import for navigation
+import Link from "next/link"; 
 
-// Example JSON data; replace with actual data fetching in a real application
 const productData = [
   {
-    imageSrc: "/assets/homeCollections/Onee.png",
+    id: 1,
+    imageSrc: "/assets/homeCollections/nee.png",
     title: "Defense Products",
     subtitle: "RF Components",
     description:
       "Enhance your operations with our top-tier aerospace and defense solutions, designed for precision and reliability in the most demanding environments.",
+    clicked: "product1"
   },
   {
-    imageSrc: "/assets/homeCollections/twoo.png",
+    id: 2,
+    imageSrc: "/assets/homeCollections/sat.png",
     title: "Satcom and Ground Application Products",
     subtitle: "RF Components",
     description:
       "Stay connected with our advanced satellite communication and ground application products, engineered for optimal performance and durability.",
+    clicked: "product2"
   },
   {
-    imageSrc: "/assets/homeCollections/three.png",
+    id: 3,
+    imageSrc: "/assets/homeCollections/view.png",
     title: "KK Indigenous and Wave Guide Products",
     subtitle: "PCB Assemblies",
     description:
       "Experience the cutting-edge technology of our Trianga indigenous and wave guide products, crafted to deliver superior performance and efficiency.",
+    clicked: "product3"
   },
   {
-    imageSrc: "/assets/homeCollections/four.png",
+    id: 4,
+    imageSrc: "/assets/homeCollections/chan.png",
     title: "Hi-Rel Space Products",
     subtitle: "Cable Assemblies",
     description:
       "Trust our high-reliability space-qualified products for your critical space missions, ensuring unmatched quality and dependability.",
+    clicked: "product4"
   },
   {
+    id: 5,
     imageSrc: "/assets/homeCollections/seveen.png",
     title: "Test & Measurements Products",
     subtitle: "RF Components",
     description:
       "Source the finest raw materials, fasteners, and ceramic products from us, offering exceptional quality to meet your manufacturing and production needs.",
+    clicked: "product5"
   },
   {
+    id: 6,
     imageSrc: "/assets/homeCollections/six.png",
     title: "AMC for satcom services",
     subtitle: "RF Components",
     description:
       "Ensure the longevity and performance of your SATCOM antennas and RF components with our expert AMC services, providing maintenance and support you can rely on.",
+    clicked: "product6"
   },
   {
-    imageSrc: "/assets/homeCollections/five.png",
+    id: 7,
+    imageSrc: "/assets/homeCollections/raw.png",
     title: "Specialized Raw Materials & Ceramics Products",
     subtitle: "RF Components",
     description:
       "Ensure the longevity and performance of your SATCOM antennas and RF components with our expert AMC services, providing maintenance and support you can rely on.",
+    clicked: "product7"
   },
   {
-    imageSrc: "/assets/homeCollections/eight.png",
-    title: "Medical & Scientfic components",
+    id: 8,
+    imageSrc: "/assets/homeCollections/medi.png",
+    title: "Medical & Scientific components",
     subtitle: "RF Components",
     description:
       "Ensure the longevity and performance of your SATCOM antennas and RF components with our expert AMC services, providing maintenance and support you can rely on.",
+    clicked: "product8"
   },
 ];
 
 const ProductAero = () => {
   const [products, setProducts] = useState([]);
-  const [selectedProduct, setSelectedProduct] = useState(null);
-  const [cart, setCart] = useState([]);
-  const router = useRouter();
 
   useEffect(() => {
     AOS.init();
     setProducts(productData);
-    // Load cart from localStorage on mount
-    const savedCart = JSON.parse(localStorage.getItem('cart')) || [];
-    setCart(savedCart);
   }, []);
-
-  const openModal = (product) => {
-    setSelectedProduct(product);
-  };
-
-  const closeModal = () => {
-    setSelectedProduct(null);
-  };
-
-  const addToCart = (product) => {
-    const newCart = [...cart, product];
-    setCart(newCart);
-    localStorage.setItem('cart', JSON.stringify(newCart));
-    console.log("Added to cart:", product); // Debug log
-    closeModal();
-  };
-
-  const handleViewCart = () => {
-    router.push(`/cart`);
-  };
 
   return (
     <main>
@@ -127,57 +118,21 @@ const ProductAero = () => {
                 <h1 className="line-clamp-1 text-xl font-bold">{product.title}</h1>
                 {product.subtitle && <h2>{product.subtitle}</h2>}
                 <p className="line-clamp-2">{product.description}</p>
-                <button
-                  onClick={() => openModal(product)}
-                  className="mt-2 rounded bg-black px-4 py-2 text-white hover:bg-blue-600"
+                <Link
+                  href={`/products/${product.clicked}`}
+                  passHref  // Ensure passHref is used to pass href prop to the underlying <a> tag
                 >
-                  View Details
-                </button>
+                  <button
+                    className="mt-2 rounded bg-black px-4 py-2 text-white hover:bg-blue-600"
+                  >
+                    View Details
+                  </button>
+                </Link>
               </div>
             </div>
           ))}
         </div>
       </section>
-
-      {selectedProduct && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="relative bg-white p-8 rounded shadow-lg max-w-md mx-auto">
-            <button
-              onClick={closeModal}
-              className="absolute top-2 right-2 font-bold text-lg text-white bg-black hover:bg-red px-2.5 pb-1 rounded-full"
-            >
-              &times;
-            </button>
-            <h1 className="text-2xl font-bold mb-4">{selectedProduct.title}</h1>
-            {selectedProduct.subtitle && <h2 className="mb-2">{selectedProduct.subtitle}</h2>}
-            <Image
-              src={selectedProduct.imageSrc}
-              width={500}
-              height={500}
-              alt="Product Image"
-              className="w-full h-auto object-cover mb-4"
-            />
-            <p>{selectedProduct.description}</p>
-            <button
-              onClick={() => addToCart(selectedProduct)}
-              className="mt-4 rounded bg-green px-4 py-2 text-white hover:bg-lightyellow"
-            >
-              Add to Cart
-            </button>
-          </div>
-        </div>
-      )}
-
-      {cart.length > 0 && (
-        <div className="fixed bottom-4 right-4">
-          <button
-            onClick={handleViewCart}
-            className="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-800"
-          >
-            View Cart ({cart.length})
-          </button>
-        </div>
-      )}
     </main>
   );
 };

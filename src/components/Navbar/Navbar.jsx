@@ -80,22 +80,13 @@ export default function Navbar() {
                 </span>
               </Link>
 
-              <Link href="/contact" passHref>
-                <span className={`rounded py-1.5 px-3 text-sm font-medium hover:bg-body-600 hover:text-white ${isActive('/contact')}`}>
-                  Contact
-                </span>
-              </Link>
+              
             </div>
 
             <div className="flex flex-col items-center gap-3 sm:ml-auto sm:flex-row">
-              <Link href="/getQuote" passHref className="flex items-center gap-x-1.5 rounded border-accent-300 py-1.5 px-3 font-medium text-body-500 hover:bg-body-100 sm:border sm:border-primary-300 sm:bg-primary sm:font-semibold sm:text-primary-800 sm:hover:bg-primary-300">
+              <Link href="/contact" passHref className="flex items-center gap-x-1.5 rounded border-accent-300 py-1.5 px-3 font-medium text-body-500 hover:bg-body-100 sm:border sm:border-primary-300 sm:bg-primary sm:font-semibold sm:text-primary-800 sm:hover:bg-primary-300">
                 <IconNotes size={20} stroke={1.5} className="hidden sm:block" />
-                Quote
-              </Link>
-
-              <Link href="/cart" passHref className="rounded py-1.5 px-3 text-body-900 hover:bg-body-100">
-                <IconShoppingCart stroke={1.5} size={24} className="hidden sm:block" />
-                <span className="text-body-500 sm:hidden">Your Cart</span>
+                Contact
               </Link>
             </div>
           </div>
